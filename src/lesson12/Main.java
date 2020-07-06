@@ -4,12 +4,19 @@ package lesson12;
 public class Main {
     public static void main(String[] args) {
         Object unknownObject = null;
-        unknownObject.equals("knownObject"); //NullPointerException
+        try {
+            unknownObject.equals("knownObject"); //NullPointerException
+        } catch (NullPointerException ex) {
+            System.out.println("NullPointerException: " + ex.getMessage());
+        }
 
         String str1 = "Hello, world!";
         char[] result = str1.toCharArray();
-        System.out.println(result.length);
-        System.out.println(result[14]); //ArrayIndexOutOfBoundsException
+        try {
+            System.out.println(result[14]); //ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("ArrayIndexOutOfBoundsException: " + ex.getMessage());
+        }
 
         try {
             int[] array = new int[-2];
