@@ -1,21 +1,21 @@
 package lesson13;
 
 public enum Meal {
-    APPLE("Яблоко", 1),
-    CARROT("Морковь", 0),
-    PORRIDGE("Каша", 1),
-    BROCCOLI("Брокколи", 0),
-    BANANA("Банан", 1);
+    APPLE("Яблоко", true),
+    CARROT("Морковь", false),
+    PORRIDGE("Каша", true),
+    BROCCOLI("Брокколи", false),
+    BANANA("Банан", true);
 
     private String title;
-    private int preferences;
+    private boolean preferences;
 
-    Meal(String title, int preferences) {
+    Meal(String title, boolean preferences) {
         this.title = title;
         this.preferences = preferences;
     }
 
-    public int getPreferences() {
+    public boolean isPreferences() {
         return preferences;
     }
 

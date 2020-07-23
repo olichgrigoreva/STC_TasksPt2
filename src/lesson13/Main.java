@@ -7,10 +7,9 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         Random random = new Random();
-        int today_meal = random.nextInt(Meal.values().length) - 1;
+        Meal today_meal = Meal.values()[random.nextInt(Meal.values().length)];
 
         try {
-            //System.out.println(Meal.values()[today_meal]);
             Child.eat(today_meal);
         } catch (ArrayIndexOutOfBoundsException | MealException ex) {
             System.out.println(ex + "");
